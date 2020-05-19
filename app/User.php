@@ -44,7 +44,23 @@ class User extends Authenticatable
 
     public function timeline()
     {
-        return Tweef::where('user_id', $this->id)->latest()->get();
+        /**
+         * Include all of the user's Tweefs
+         * as well as the Tweefs of everyone
+         * they follow ... in descending order by date.
+         */
+
+        $friends = $this->follows()->pluck('id');
+
+        return Tweef::whereIn('user_id', $friends)
+            ->orWhere('user_id', $this->id)
+            ->latest()
+            ->get();
+    }
+
+    public function tweefs()
+    {
+        return $this->hasMany(Tweef::class);
     }
 
     public function follow(User $user)

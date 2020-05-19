@@ -17,8 +17,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::post('/tweefs', 'TweefsController@store');
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/tweefs', 'TweefsController@index')->name('home');
+    Route::post('/tweefs', 'TweefsController@store');
+});
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
