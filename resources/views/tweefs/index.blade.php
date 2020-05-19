@@ -1,7 +1,7 @@
-@extends('layouts.app')
+<x-app>
 
-@section('content')
     @include('_publish-tweef-panel')
 
     @include('_timeline')
-@endsection
+
+</x-app>

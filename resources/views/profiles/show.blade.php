@@ -1,6 +1,4 @@
-@extends('layouts.app')
-
-@section('content')
+<x-app>
     <header class="mb-6 relative">
         <img src="/images/default-profile-banner.jpg" alt="profile-banner" class="mb-2">
         <div class="flex justify-between items-center mb-4">
@@ -28,4 +26,4 @@
     @include('_timeline', [
         'tweefs' => $user->tweefs
     ])
-@endsection
+</x-app>
