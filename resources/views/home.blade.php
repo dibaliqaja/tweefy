@@ -10,11 +10,9 @@
             @include('_publish-tweef-panel')
 
             <div class="border border-gray-300 rounded-lg">
-                @include('_tweef')
-                @include('_tweef')
-                @include('_tweef')
-                @include('_tweef')
-                @include('_tweef')
+                @foreach ($tweefs as $tweef)
+                    @include('_tweef')
+                @endforeach
             </div>
         </div>
 

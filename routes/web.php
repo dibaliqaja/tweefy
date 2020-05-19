@@ -17,6 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::post('/tweefs', 'TweefsController@store');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
