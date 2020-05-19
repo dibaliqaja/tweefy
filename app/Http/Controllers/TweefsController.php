@@ -3,17 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Tweef;
-use Illuminate\Http\Request;
 
 class TweefsController extends Controller
 {
     public function index()
     {
-        return view('home', [
+        return view('tweefs.index', [
             'tweefs' => auth()->user()->timeline()
         ]);
     }
-    
+
     public function store()
     {
         $attributes = request()->validate(['body' => 'required|max:255']);
