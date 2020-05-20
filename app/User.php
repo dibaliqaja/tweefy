@@ -63,8 +63,10 @@ class User extends Authenticatable
         return $this->hasMany(Tweef::class)->latest();
     }
 
-    public function path()
+    public function path($append = '')
     {
-        return route('profile', $this->name);
+        $path = route('profile', $this->name);
+
+        return $append ? "{$path}/{$append}" : $path;
     }
 }

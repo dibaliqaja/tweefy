@@ -12,4 +12,9 @@ class FollowsController extends Controller
 
         return back();
     }
+
+    public function edit(User $user)
+    {
+        return view('profiles.edit', compact('user'));
+    }
 }
