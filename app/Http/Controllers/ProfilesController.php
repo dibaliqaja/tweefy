@@ -9,9 +9,12 @@ class ProfilesController extends Controller
 {
     public function show(User $user)
     {
-        return view('profiles.show', compact('user'));
+        return view('profiles.show', [
+            'user' => $user,
+            'tweefs' => $user->tweefs()->paginate(10)
+        ]);
     }
-    
+
     public function edit(User $user)
     {
         return view('profiles.edit', compact('user'));
@@ -28,8 +31,8 @@ class ProfilesController extends Controller
         ]);
 
         if (request('avatar')) {
-            $attributes['avatar'] = request('avatar')->store('avatars');
-        }        
+            $attributes['avatar'] = request('avatar')->store('avatars', 'public');
+        }
 
         $user->update($attributes);
 

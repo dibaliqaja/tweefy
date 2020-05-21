@@ -4,4 +4,6 @@
     @empty
         <p class="p-4">No tweefs yet.</p>
     @endforelse
+
+    {{ $tweefs->links() }}
 </div>

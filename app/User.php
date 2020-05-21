@@ -58,7 +58,7 @@ class User extends Authenticatable
         return Tweef::whereIn('user_id', $friends)
             ->orWhere('user_id', $this->id)
             ->latest()
-            ->get();
+            ->paginate(10);
     }
 
     public function tweefs()
