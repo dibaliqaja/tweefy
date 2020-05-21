@@ -19,7 +19,7 @@
         <div class="mb-6">
             <label for="avatar" class="block mb-2 uppercase font-bold text-xs text-gray-700">Avatar</label>
             <div class="flex">
-                <input type="file" class="border border-gray-700 p-2 w-full" name="avatar" id="avatar" value="{{ $user->avatar }}" required>
+                <input type="file" class="border border-gray-700 p-2 w-full" name="avatar" id="avatar" value="{{ $user->avatar }}">
                 <img src="{{ $user->avatar }}" alt="avatar" width="45">
             </div>
             @error('avatar')
