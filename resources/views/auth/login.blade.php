@@ -1,5 +1,5 @@
 <x-master>
-    <div class="container mx-auto px-6 py-4 bg-gray-400">
+    <div class="container mx-auto px-6 py-4 bg-gray-400 rounded-lg">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
@@ -56,7 +56,7 @@
                                     </button>
 
                                     @if (Route::has('password.request'))
-                                        <a class="btn btn-link" href="{{ route('password.request') }}">
+                                        <a class="btn btn-link m-5" href="{{ route('password.request') }}">
                                             {{ __('Forgot Your Password?') }}
                                         </a>
                                     @endif
